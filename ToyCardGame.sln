@@ -13,7 +13,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToyCardGameServer", "ToyCar
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToyCardGameClient", "ToyCardGameClient\ToyCardGameClient.csproj", "{7C68B7E0-0774-4BFD-A6AC-855C3ADB85CC}"
 EndProject
-Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{4D4DFEA5-6E51-4D32-A9DF-1619CC0E0039}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToyCardGame.Redis", "..\ToyCardGame.Redis\ToyCardGame.Redis.csproj", "{6DB4DE32-EE60-4A47-AAA4-91A42061E962}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,10 +41,10 @@ Global
 		{7C68B7E0-0774-4BFD-A6AC-855C3ADB85CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7C68B7E0-0774-4BFD-A6AC-855C3ADB85CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7C68B7E0-0774-4BFD-A6AC-855C3ADB85CC}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4D4DFEA5-6E51-4D32-A9DF-1619CC0E0039}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4D4DFEA5-6E51-4D32-A9DF-1619CC0E0039}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4D4DFEA5-6E51-4D32-A9DF-1619CC0E0039}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4D4DFEA5-6E51-4D32-A9DF-1619CC0E0039}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6DB4DE32-EE60-4A47-AAA4-91A42061E962}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6DB4DE32-EE60-4A47-AAA4-91A42061E962}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6DB4DE32-EE60-4A47-AAA4-91A42061E962}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6DB4DE32-EE60-4A47-AAA4-91A42061E962}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

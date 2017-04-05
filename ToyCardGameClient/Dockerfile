@@ -1,5 +1,5 @@
-FROM microsoft/dotnet:1.1-runtime
+﻿FROM microsoft/dotnet:1.1-runtime
 ARG source
 WORKDIR /app
-COPY ${source:-obj/Docker/publish} .
+COPY . .
 ENTRYPOINT ["dotnet", "ToyCardGameClient.dll"]

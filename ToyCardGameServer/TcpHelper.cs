@@ -3,12 +3,16 @@ using System.Collections.Generic;
 using System.Net;
 using System.Net.Sockets;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
+using ToyCardGame.Redis;
+using ToyCardGameLibrary;
 
 namespace ToyCardGameServer
 {
     class TcpHelper
     {
+        private static Dictionary<string, TcpClient> _clients;
         private static TcpListener listener { get; set; }
         private static bool accept { get; set; } = false;
 
@@ -19,8 +23,9 @@ namespace ToyCardGameServer
 
             listener.Start();
             accept = true;
-
+            _clients = new Dictionary<string, TcpClient>();
             Console.WriteLine($"Server started. Listening to TCP clients at 127.0.0.1:{port}");
+            
         }
 
         public static void Listen()
@@ -44,26 +49,57 @@ namespace ToyCardGameServer
 
         private static void TalkToClient(TcpClient client)
         {
-            Console.WriteLine("Client connected. Waiting for data.");           
-            string message = "";
-
-            while (message != null && !message.StartsWith("quit"))
+            Console.WriteLine("Client connected. Waiting for data.");
+            var clientAlive = true;
+            Player player = null;
+            while (true)
             {
-                byte[] data = Encoding.ASCII.GetBytes("Send next data: [enter 'quit' to terminate] ");
-                client.GetStream().Write(data, 0, data.Length);
+                if (player == null)
+                {
+                    byte[] data = Encoding.ASCII.GetBytes("What is your username?");
+                    client.GetStream().Write(data, 0, data.Length);
 
-                byte[] buffer = new byte[1024];
-                var bytes = client.GetStream().Read(buffer, 0, buffer.Length);
+                    byte[] buffer = new byte[1024];
+                    var bytes = client.GetStream().Read(buffer, 0, buffer.Length);
+                    string message = Encoding.ASCII.GetString(buffer, 0, bytes);
+                    player = PlayerRedis.Get(message);
 
-                message = Encoding.ASCII.GetString(buffer, 0, bytes);
-                switch (message)
+                    if (player == null)
+                    {
+                        data = Encoding.ASCII.GetBytes("terminate: Username does not exist.");
+                        client.GetStream().Write(data, 0, data.Length);
+                        break;
+                    }
+                    else
+                    {
+                        _clients.Add(player.Username, client);
+                    }
+                }
+                                                
+                byte[] responseBuffer = new byte[1024];
+                var responseBytes = client.GetStream().Read(responseBuffer, 0, responseBuffer.Length);
+                string response = Encoding.ASCII.GetString(responseBuffer, 0, responseBytes);
+                switch (response)
                 {
                     case "getdecks":
-                        byte[] deckdata = Encoding.ASCII.GetBytes("Test");
-                        client.GetStream().Write(deckdata, 0, deckdata.Length);
+                        string decks = String.Empty;                        
+                        foreach (var deck in player.Decks)
+                        {
+                            decks += deck.Name + "\n";
+                        }
+                        byte[] data = Encoding.ASCII.GetBytes(decks);
+                        client.GetStream().Write(data, 0, data.Length);
+                        break;
+                    case "startgame":
+                        byte[] gamedata = Encoding.ASCII.GetBytes("game started");
+                        client.GetStream().Write(gamedata, 0, gamedata.Length);
+                        foreach (var globalClients in _clients)
+                        {
+                            globalClients.Value.GetStream().Write(gamedata, 0, gamedata.Length);
+                        }
                         break;
                 }
-                Console.WriteLine(message);
+
             }
             Console.WriteLine("Closing connection.");
             client.GetStream().Dispose();

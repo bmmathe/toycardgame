@@ -1,14 +1,11 @@
-﻿using System;
-
-namespace ToyCardGameServer
+﻿namespace ToyCardGameServer
 {
     class Program
     {
         public static void Main(string[] args)
         {
-            // Start the server  
             TcpHelper.StartServer(5678);
-            TcpHelper.Listen(); // Start listening.  
+            TcpHelper.Listen(); // Start listening.      
         }
     }
 }
