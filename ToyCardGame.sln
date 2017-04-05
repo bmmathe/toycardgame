@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26228.9
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToyCardGame", "ToyCardGame\ToyCardGame.csproj", "{67696DCB-9308-4ECC-9982-7711B9D82205}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToyCardGameInitRedis", "ToyCardGameInitRedis\ToyCardGameInitRedis.csproj", "{9E0DC19C-AF0E-4DF7-9C4D-6188C4FDB692}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToyCardGameLibrary", "ToyCardGameLibrary\ToyCardGameLibrary.csproj", "{D433FD15-ADC4-4BBD-BC34-01800166E016}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToyCardGameServer", "ToyCardGameServer\ToyCardGameServer.csproj", "{274C57ED-EF1C-4570-81A4-994138660996}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToyCardGameClient", "ToyCardGameClient\ToyCardGameClient.csproj", "{7C68B7E0-0774-4BFD-A6AC-855C3ADB85CC}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{4D4DFEA5-6E51-4D32-A9DF-1619CC0E0039}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{67696DCB-9308-4ECC-9982-7711B9D82205}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{67696DCB-9308-4ECC-9982-7711B9D82205}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{67696DCB-9308-4ECC-9982-7711B9D82205}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{67696DCB-9308-4ECC-9982-7711B9D82205}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9E0DC19C-AF0E-4DF7-9C4D-6188C4FDB692}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E0DC19C-AF0E-4DF7-9C4D-6188C4FDB692}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E0DC19C-AF0E-4DF7-9C4D-6188C4FDB692}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E0DC19C-AF0E-4DF7-9C4D-6188C4FDB692}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D433FD15-ADC4-4BBD-BC34-01800166E016}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D433FD15-ADC4-4BBD-BC34-01800166E016}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D433FD15-ADC4-4BBD-BC34-01800166E016}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D433FD15-ADC4-4BBD-BC34-01800166E016}.Release|Any CPU.Build.0 = Release|Any CPU
+		{274C57ED-EF1C-4570-81A4-994138660996}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{274C57ED-EF1C-4570-81A4-994138660996}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{274C57ED-EF1C-4570-81A4-994138660996}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{274C57ED-EF1C-4570-81A4-994138660996}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7C68B7E0-0774-4BFD-A6AC-855C3ADB85CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C68B7E0-0774-4BFD-A6AC-855C3ADB85CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C68B7E0-0774-4BFD-A6AC-855C3ADB85CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C68B7E0-0774-4BFD-A6AC-855C3ADB85CC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4D4DFEA5-6E51-4D32-A9DF-1619CC0E0039}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D4DFEA5-6E51-4D32-A9DF-1619CC0E0039}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D4DFEA5-6E51-4D32-A9DF-1619CC0E0039}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D4DFEA5-6E51-4D32-A9DF-1619CC0E0039}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

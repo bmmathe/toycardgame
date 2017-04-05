@@ -1,0 +1,7 @@
+{
+  "profiles": {
+    "ToyCardGameInitRedis": {
+      "commandName": "Project"
+    }
+  }
+}
